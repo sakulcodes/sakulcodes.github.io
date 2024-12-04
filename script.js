@@ -11,12 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    let x = 0.01, y = 0, z = 0; // Initial conditions
+    let x = 1, y = 1, z = 1; // Initial conditions for better visibility
     const dt = 0.01;
     const sigma = 10, rho = 28, beta = 8 / 3;
 
     function drawLorenz() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // Slight opacity for trailing effect
+        // Clear the canvas slightly for a trailing effect
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.05)'; // Use a light color to clear background
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Lorenz equations update
@@ -36,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const px = centerX + x * scale;
         const py = centerY + z * scale;
 
-        ctx.fillStyle = '#ff7e5f'; // Color of the attractor
+        // Draw the point
+        ctx.fillStyle = '#ff0000'; // Use a color that contrasts well with the background
         ctx.beginPath();
         ctx.arc(px, py, 1, 0, 2 * Math.PI);
         ctx.fill();
@@ -45,14 +47,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     drawLorenz();
-});
-
-// Optional: Add smooth scrolling for links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
 });
