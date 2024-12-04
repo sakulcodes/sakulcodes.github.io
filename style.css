@@ -1,3 +1,15 @@
+/* Canvas for Lorenz Attractor */
+#lorenzAttractorCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep it behind all other content */
+    pointer-events: none; /* Prevent interference with any clicks */
+}
+
+/* Your Existing Styles... */
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
@@ -10,7 +22,6 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: #fff;
     text-align: center;
     padding: 10rem 2rem;
@@ -20,113 +31,4 @@ body {
     justify-content: center;
 }
 
-.hero-section h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    margin: 0;
-}
-
-.hero-section p {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-}
-
-/* Navigation Styles */
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 1rem 0;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffd1b2;
-}
-
-/* Content Section Styles */
-.content-section {
-    padding: 5rem 2rem;
-    background-color: #f5f5f5;
-    text-align: center;
-}
-
-.content-section:nth-child(even) {
-    background-color: #e0e0e0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.content-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Project Cards */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    width: 300px;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card i {
-    font-size: 2rem;
-    color: #ff7e5f;
-    margin-bottom: 1rem;
-}
-
-/* Contact Section */
-.contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-}
-
-.contact-list li {
-    margin: 1rem 0;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.contact-list li i {
-    margin-right: 0.5rem;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #333;
-    color: #fff;
-    font-size: 0.9rem;
-}
+/* Add more CSS here for your other sections */
