@@ -12,14 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", resizeCanvas);
 
     let x = 1, y = 1, z = 1; // Initial conditions for better visibility
-    const dt = 0.005; // Reduced step size to slow down the plotting
+    const dt = 0.008; // Adjusted step size to control speed
     const sigma = 10, rho = 28, beta = 8 / 3;
 
     function drawLorenz() {
-        // Clear the canvas with a transparent black for the trailing effect
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; // Faint white background to create trailing effect
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
         // Lorenz equations update
         let dx = sigma * (y - x) * dt;
         let dy = (x * (rho - z) - y) * dt;
@@ -30,22 +26,20 @@ document.addEventListener("DOMContentLoaded", function () {
         z += dz;
 
         // Scale and translate to fit canvas
-        const scale = 10;
+        const scale = 12;
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
 
         const px = centerX + x * scale;
-        const py = centerY + z * scale;
+        const py = centerY - z * scale; // Flip vertically for better visualization
 
-        // Draw the point
-        ctx.fillStyle = '#000000'; // Black color to contrast with the background
+        // Draw the point with a bold, vibrant color
+        ctx.fillStyle = '#ff4500'; // Bright orange-red color for bold visibility
         ctx.beginPath();
-        ctx.arc(px, py, 1, 0, 2 * Math.PI);
+        ctx.arc(px, py, 1.5, 0, 2 * Math.PI); // Slightly larger point size
         ctx.fill();
 
-        setTimeout(() => {
-            requestAnimationFrame(drawLorenz);
-        }, 20); // Slows down the animation further
+        requestAnimationFrame(drawLorenz);
     }
 
     drawLorenz();
